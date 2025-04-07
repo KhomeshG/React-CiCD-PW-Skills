@@ -1,0 +1,29 @@
+name: Github Action Runner Workflow /pipeline for Node Enviroment Setup
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  CI-Pipeline:
+    runs-on: ubuntu-lastest
+
+    steps:
+      - name: "Setup Node Enviroment"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: "Check Node version"
+        run: node --version
+
+      - name: "Clone Repo"
+        uses: actions/checkout@v2
+
+      - name: "Install All Dependancies"
+        run: npm install
+
+      - name: "Show Directories"
+        run: ls
