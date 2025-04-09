@@ -19,11 +19,14 @@ jobs:
       - name: "Check Node version"
         run: node --version
 
-      - name: "Clone Repo"
+      - name: "Clone React Repo"
         uses: actions/checkout@v2
 
-      - name: "Install All Dependancies"
+      - name: "Install All React Dependancies"
         run: npm install
 
-      - name: "Show Directories"
+      - name: "Show React Directories"
         run: ls
+
+      - name: "Setup React Build"
+        run: npm run build
